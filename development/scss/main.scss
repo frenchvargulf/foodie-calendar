@@ -1,0 +1,75 @@
+@import "normalize";
+
+@import "partials/variables";
+
+@import "partials/base";
+
+@import "partials/header";
+
+@import "partials/carousele";
+
+@import "partials/section-action";
+
+@import "partials/section-aboutApp";
+
+@import "partials/form";
+
+@import "partials/section-author";
+
+@import "partials/footer";
+
+/*
+tutaj nie dodajemy sass'a, tylko import.
+ponizej icony z google awesome, ktore juz pobralam. Mysle, ze ulatwi to nam prace i wszystkie beda jednym stylu :) 
+troche sie roznia od orginalu, bo mam darmowa wesje. 
+font awesome dodane do HTML
+pozniej do skasowania
+
+ICONS LANDING PAGE 
+
+icon prev <i class="fas fa-chevron-left"></i>
+icon next <i class="fas fa-chevron-right"></i>
+icon check <i class="fas fa-check"></i>
+icon clock <i class="far fa-clock"></i>
+icon list <i class="fas fa-list"></i>
+
+ICONS LANDING PAGE / social media
+
+icon fb <i class="fab fa-facebook-square"></i>
+icon twitter <i class="fab fa-twitter-square"></i>
+icon insta <i class="fab fa-instagram"></i>
+
+ICONS APP
+
+ICONS APP / dashboard 
+
+icon user <i class="fas fa-user"></i>
+icon plus square <i class="far fa-plus-square"></i>
+icon info circle <i class="fas fa-info-circle"></i>
+icon check circle <i class="fas fa-check-circle"></i>
+icon exclamation ircle <i class="fas fa-exclamation-circle"></i>
+icon prev double <i class="fas fa-angle-double-left"></i>
+icon next double <i class="fas fa-angle-double-right"></i> 
+icon close <i class="fas fa-times"></i>
+
+
+ICONS APP / add recipe 
+
+icon trash <i class="far fa-trash-alt"></i>
+icon pen <i class="far fa-edit"></i>
+
+ICONS APP / add recipes extra stuff
+
+icon clone <i class="far fa-clone"></i>
+icon pdf <i class="far fa-file-pdf"></i>
+icon print <i class="fas fa-print"></i>
+
+color logo
+
+color: #E58A20;
+
+font logo, google fonts dodane do HTML
+
+font-family: 'Charmonman', cursive;
+
+*/

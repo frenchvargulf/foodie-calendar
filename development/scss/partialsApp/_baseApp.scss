@@ -1,0 +1,65 @@
+
+.week-plan {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display-week {
+  border-collapse: collapse;
+  margin-bottom: .7em;
+}
+
+
+td{
+  border-bottom: 1px solid $colorTextSecondary;
+  padding: 3px;
+  color:#5B605F;
+}
+
+th{
+  text-align: left;
+  padding: 5px;
+  border-bottom: 1px solid  $colorTextSecondary;
+  color: #4a4a49;
+}
+
+.week-plan__title {
+  color: $colorTrash;
+  text-align: center;
+  padding-bottom: .7em;
+}
+
+.week-plan__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $colorDeco;
+}
+
+
+@media (max-width: 760px){
+  .week-plan{
+    display: none;
+  }
+}
+
+
+
+
+.btn {
+  background: $colorDeco;
+  padding: 15px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: $colorBackground;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+}
+

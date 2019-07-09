@@ -1,0 +1,56 @@
+.welcome-section {
+    padding: 90px 20px;
+    background-color: $colorBackground;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.welcome-section__title {
+    font-size: 2.5em;
+}
+  
+.welcome-section__text {
+    font-size: 1.3em;
+    font-weight: 700;
+    line-height: 35px;
+}
+  
+.welcome-section__form {
+    width: 300px;
+}
+  
+.welcome-section__form--label {
+    display: none;
+}
+  
+.welcome-section__form--input {
+    width: 250px;
+    height: 30px;
+    margin: 5px;
+}
+  
+.btn-submit {
+    padding: 10px;
+    display: block;
+    outline: none;
+    border: none;
+    max-width: 150px;
+    margin: 10px auto;
+    background-color: $colorDeco;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}

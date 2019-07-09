@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link href="https://fonts.googleapis.com/css?family=Charmonman:400,700|Open+Sans:400,600,700&amp;subset=latin-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <link rel="stylesheet" href="./css/app.css" />
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-18-18">
+            <header class="page-header">
+                <div class="container">
+
+                    <h1 class="page-logo__title">
+                        <a href="/" class="page-logo" aria-current="page">
+                    <span id="first">Zaplanuj</span>
+                    <span id="second">Jedzonko</span>
+                </a>
+                    </h1>
+
+                    <div class="page-username">
+                        <h4 class="page-username__title"><span class="user">Imię</span></h4>
+                        <div class="page-username__icon"><i class="fas fa-user-circle"></i></div>
+                    </div>
+
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3-18">
+            <aside class="aside">
+                <nav class="page-nav">
+                    <ul class="page-nav__list">
+                        <li class="page-nav__item active"><a href="app.html" class="page-nav__link">Pulpit</a><i
+                            class="fas fa-angle-right"></i>
+                        </li>
+                        <li class="page-nav__item"><a href="recipes.html" class="page-nav__link">Przepisy</a><i
+                            class="fas fa-angle-right"></i></li>
+                        <li class="page-nav__item"><a href="schedules.html" class="page-nav__link">Plany</a><i
+                            class="fas fa-angle-right"></i></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+        <div class="col-15-18">
+            <div class="main-desktop">
+
+                <section class="welcome-section border-dashed">
+                        <h2 class="welcome-section__title">Witaj</h2>
+                        <p class="welcome-section__text">
+                            wygląda na to, że jesteś tutaj<br> pierwszy raz!
+                        </p>
+                        <form id="myForm" class="welcome-section__form">
+                            <div>
+                                <label for="name" class="welcome-section__form--label">Imię:</label>
+                                <input type="text" name="name" id="name" value="" class="welcome-section__form--input"
+                                    placeholder="tutaj wpisz jak masz na imię" />
+                                <span class="error-message"></span>
+                            </div>
+                            <div>
+                                <button type="submit" href="" class="btn-submit">Gotowe!</button>
+                            </div>
+                        </form>
+                        <p class="welcome-section__text">
+                            Podaj nam swoję imię, a my zorganizujemy <br> dla Ciebie naszą aplikację :)
+                        </p>
+                </section>
+
+                <section class="dashboard-section visible">
+                    <div class="row">
+
+                        <div class="col-18-18">
+                            <div class="dashboard-header">
+                                <div class="dashboard-menu">
+                                    <div class="menu-item border-dashed">
+                                        <a class="btn-add-recipe">
+                                            <i class="far fa-plus-square icon-plus-square"></i>
+                                            <span class="title">przepis</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item border-dashed">
+                                        <a class="btn-add-plan">
+                                            <i class="far fa-plus-square icon-plus-square"></i>
+                                            <span class="title">plan</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item border-dashed">
+                                        <a href="">
+                                            <i class="far fa-plus-square icon-plus-square"></i>
+                                            <span class="title">zakupy</span>
+                                        </a>
+                                    </div>
+                                </div>
+                
+                                <div class="dashboard-alerts">
+                                    <div class="alert-item alert-info border-dashed">
+                                        <i class="fas icon-circle fa-info-circle"></i>
+                                        <span class="font-weight-bold">Masz już <span class="recipiesCount"></span> przepisów,
+                                        nieźle!<i class="fas fa-times btn-edit"></i></span>
+                                    </div>
+                                    <div class="alert-item alert-light border-dashed">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <span class="font-weight-bold">Pamiętaj, aby dodać plan!<i class="fas fa-times btn-edit"></i></span>
+                                    </div>
+                                    <div class="alert-item alert-reminder border-dashed">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="font-weight-bold">Świetnie, że jesteś! Udanego planowania i smacznego!:)<i class="fas fa-times btn-edit"></i></span>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-18-18">
+                            <div class="week-plan border-dashed">
+                                <h2 class="week-plan__title">
+                                    Twój plan na 
+                                    <span id="currentWeekNumber">X</span> 
+                                    tydzień                                
+                                </h2>
+                                <table class="display-week schedule">
+                                    <tr>
+                                        <th>Poniedziałek</th>
+                                        <th>Wtorek</th>
+                                        <th>Środa</th>
+                                        <th>Czwartek</th>
+                                        <th>Piątek</th>
+                                        <th>Sobota</th>
+                                        <th>Niedziela</th>
+                                    </tr>
+                            
+                                    <tr class="displayFood">
+                                        <td class="display__monday"><span>śniadanie</span></td>
+                                        <td class="display__tuesday"><span>śniadanie</span></td>
+                                        <td class="display__wednesday"><span>śniadanie</span></td>
+                                        <td class="display__thursday"><span>śniadanie</span></td>
+                                        <td class="display__friday"><span>śniadanie</span></td>
+                                        <td class="display__saturday"><span>śniadanie</span></td>
+                                        <td class="display__sunday"><span>śniadanie</span></td>
+                                    </tr>
+                                    <tr class="displayFood">
+                                        <td class="display__monday"><span>drugie śniadanie</span></td>
+                                        <td class="display__tuesday"><span>drugie śniadanie</span></td>
+                                        <td class="display__wednesday"><span>drugie śniadanie</span></td>
+                                        <td class="display__thursday"><span>drugie śniadanie</span></td>
+                                        <td class="display__friday"><span>drugie śniadanie</span></td>
+                                        <td class="display__saturday"><span>drugie śniadanie</span></td>
+                                        <td class="display__sunday"><span>drugie śniadanie</span></td>
+                                        
+                                    </tr>
+                                    <tr class="displayFood">
+                                        <td class="display__monday"><span>zupa</span></td>
+                                        <td class="display__tuesday"><span>zupa</span></td>
+                                        <td class="display__wednesday"><span>zupa</span></td>
+                                        <td class="display__thursday"><span>zupa</span></td>
+                                        <td class="display__friday"><span>zupa</span></td>
+                                        <td class="display__saturday"><span>zupa</span></td>
+                                        <td class="display__sunday"><span>zupa</span></td>
+                                        
+                                    </tr>
+                                    <tr class="displayFood">
+                                        <td class="display__monday"><span>drugie danie</span></td>
+                                        <td class="display__tuesday"><span>drugie danie</span></td>
+                                        <td class="display__wednesday"><span>drugie danie</span></td>
+                                        <td class="display__thursday"><span>drugie danie</span></td>
+                                        <td class="display__friday"><span>drugie danie</span></td>
+                                        <td class="display__saturday"><span>drugie danie</span></td>
+                                        <td class="display__sunday"><span>drugie danie</span></td>
+                                    </tr>
+                                    <tr class="displayFood">
+                                        <td class="display__monday"><span>kolacja</span></td>
+                                        <td class="display__tuesday"><span>kolacja</span></td>
+                                        <td class="display__wednesday"><span>kolacja</span></td>
+                                        <td class="display__thursday"><span>kolacja</span></td>
+                                        <td class="display__friday"><span>kolacja</span></td>
+                                        <td class="display__saturday"><span>kolacja</span></td>
+                                        <td class="display__sunday"><span>kolacja</span></td>
+                                    </tr>
+                                </table>
+                                <div class="week-plan__nav">
+                                    <span>
+                                        <i class="fas fa-angle-double-left prevPlan"></i>
+                                        <span>poprzedni</span>
+                                    </span>
+
+                                    <span>
+                                        <span>następny</span>    
+                                        <i class="fas fa-angle-double-right nextPlan"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="app-add-recipe visible">
+                    <div class="container">
+                       
+                        <form novalidate class="app-add-recipe">
+
+                            <div class="app-add-recipes-header">
+                                <h1>nowy przepis</h1><button id="clearAll" class="btn">Wyczyść localStorage</button> <button id="saveRecipe" class="btn">zapisz i zamknij</button>
+                            </div>
+                           
+
+                            <div class="app-add-recipes-form">
+                                <div class="row">
+                                    <p class="recipe-title">nazwa przepisu</p>
+                                    <input id="title" type="text" placeholder="nazwa" required /><br />
+                                </div>
+                                    <div class="row">
+                                        <p class="recipe-title">opis przepisu</p>
+                                        <textarea id="description" type="text" placeholder="opis" required ></textarea><br />
+                                    </div>
+
+                                <div class="row row-recipe">
+                                    <div class="col">
+                                        <p class="recipe-title">instrukcje</p>
+                                        <textarea id="instruction" type="text" placeholder="instukcja" required></textarea> 
+                                        <button id="addInstruction">     <i class="far fa-plus-square icon-plus-square"></i></button>
+                                        <ul id="newInstructions"></ul>
+                                    </div>
+                                    <div class="col">
+                                        <p class="recipe-title">składniki</p>
+                                        <textarea id="ingredient" type="text" placeholder="składnik" required></textarea> 
+                                        <button id="addIngredient"><i class="far fa-plus-square icon-plus-square"></i></button>
+                                        <ul id="newIngredients"></ul>
+                                    </div>
+                                </div>
+                           
+                            </div>
+
+                        </form>
+
+                    </div>
+                </section>
+
+                <section class="app-add-plan visible">
+                    
+                    <div class="container">
+
+                                
+                                <form class="planForm" class="app-add-plan-form" novalidate>
+
+                                    <div class="app-add-plan-header">
+                                        <h1>Dodaj plan</h1>
+                                        <button id="clearAll" class="btn">Wyczyść
+                                        localStorage</button>
+                                        <button id="savePlan" class="btn">Zapisz i zamknij</button>
+                                    </div>
+
+                                    <div class="app-add-plan-labels">
+                                        <div class="title-cnt">
+                                            <label for="titlePlan" class="form-title">Nazwa planu</label>
+                                            <input id="titlePlan" type="text" placeholder="nazwa" required class="form-input" /><br />
+                                        </div>
+                                        <div class="description-cnt">
+                                            <label for="descriptionPlan" class="form-title">Opis planu</label>
+                                            <input id="descriptionPlan" type="text" placeholder="opis" class="form-input" required /><br />
+                                        </div>
+                                        <div class="weekNumber-cnt">
+                                            <label for="weekNumber" class="form-title">Numer tygodnia</label>
+                                            <input id="weekNumber" type="number" class="form-input" required />
+                                        </div>
+                                    </div>
+                                    <table class="table-week">
+                                        <tr>
+                                            <th class="table-week__header"></th>
+                                            <th class="table-week__header">Śniadanie</th>
+                                            <th class="table-week__header">Drugie śniadanie</th>
+                                            <th class="table-week__header">Zupa</th>
+                                            <th class="table-week__header">Drugie danie</th>
+                                            <th class="table-week__header">Kolacja</th>
+                                        </tr>
+                                        <tr class="selectFood monday">
+                                            <th>Poniedziałek</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                        <tr class="selectFood tuesday">
+                                            <th>Wtorek</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                        <tr class="selectFood wednesday">
+                                            <th>Środa</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                        <tr class="selectFood thursday">
+                                            <th>Czwartek</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                        <tr class="selectFood friday">
+                                            <th>Piątek</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                        <tr class="selectFood saturday">
+                                            <th>Sobota</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                        <tr class="selectFood sunday">
+                                            <th>Niedziela</th>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                            <td class="selectionFood"></td>
+                                        </tr>
+                                    </table>
+
+                                    
+        
+                                </form>
+                    </div>
+        
+                    <!-- <div class="container">
+                                <h2>Plan na <span id="currentWeekNumber"></span> tydzień<button id="renderPlans">Wyświetl
+                                        plan</button></h2>
+                                <div id="allPlans">
+        
+                                </div>
+                                <table class="display-week">
+                                    <tr>
+                                        <th></th>
+                                        <th>Śniadanie</th>
+                                        <th>Drugie śniadanie</th>
+                                        <th>Zupa</th>
+                                        <th>Drugie danie</th>
+                                        <th>Kolacja</th>
+                                    </tr>
+                                    <tr class="displayFood monday">
+                                        <th>Poniedziałek</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                    <tr class="displayFood tuesday">
+                                        <th>Wtorek</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                    <tr class="displayFood wednesday">
+                                        <th>Środa</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                    <tr class="displayFood thursday">
+                                        <th>Czwartek</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                    <tr class="displayFood friday">
+                                        <th>Piątek</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                    <tr class="displayFood saturday">
+                                        <th>Sobota</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                    <tr class="displayFood sunday">
+                                        <th>Niedziela</th>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                        <td class="displayMeal"></td>
+                                    </tr>
+                                </table>
+                            </div> -->
+                
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="./js/app.js"></script>
+
+</body>
+
+</html>

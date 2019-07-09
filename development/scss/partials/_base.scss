@@ -1,0 +1,26 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.col {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.btn {
+    background: $colorDeco;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $colorBackground;
+    font-weight: bold;
+    border: none;
+}

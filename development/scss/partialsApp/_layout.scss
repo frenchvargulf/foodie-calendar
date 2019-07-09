@@ -1,0 +1,182 @@
+/* -------------------------------------- */
+/* Main and global classes */
+/* -------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.container {
+    width: 950px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: $fontPrimary;
+    font-size: $fontSize;
+}
+  
+h1 {
+    font-family: $fontLogo;
+}
+
+.visible {
+    visibility: hidden;
+    display: none;
+    width: 100%;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    left: -500000000;
+    opacity: 0;
+}
+
+i {
+    cursor: pointer;
+}
+
+  
+/* -------------------------------------- */
+/* Aside */
+/* -------------------------------------- */
+  
+.aside {
+    min-height: 83.5vh;
+    height: 100%;
+    width: 100%;
+    background-color: $colorNav;
+}
+  
+@media (max-width: 760px) {
+    .aside {
+      min-height: 100px;
+      height: 100%;
+    }
+}
+  
+/* -------------------------------------- */
+/* Main desktop */
+/* -------------------------------------- */
+  
+.main-desktop {
+
+    min-height: 83.5vh;
+    height: 100%;
+    width: 100%;
+    background: url("../../images/background.png");
+    padding: 20px;
+}
+  
+/* -------------------------------------- */
+/* Page-header */
+/* -------------------------------------- */
+  
+.page-header {
+    height: 100%;
+    min-height: 100px;
+    width: 100%;
+    display: block;
+    background-color: $colorText;
+}
+  
+.page-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 95%;
+}
+
+@media (max-width: 960px) {
+    .page-header .container {
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+}
+  
+/* -------------------------------------- */
+/* Logo */
+/* -------------------------------------- */
+  
+#first {
+    font-weight: 100;
+    color: white;
+}
+  
+#second {
+    color: $colorDeco;
+    font-weight: 700;
+}
+  
+.page-logo {
+    text-decoration: none;
+}
+  
+/* -------------------------------------- */
+/* Username */
+/* -------------------------------------- */
+  
+.page-username {
+    display: flex;
+    font-size: 2em;
+}
+  
+.page-username__title {
+    color: #fff;
+    font-weight: 100;
+}
+  
+.page-username__icon {
+    padding-left: .5em;
+    color: $colorDeco;
+}
+  
+/* -------------------------------------- */
+/* Aside nav */
+/* -------------------------------------- */
+  
+.page-nav__list {
+    list-style: none;
+}
+  
+.page-nav__item {
+    padding: 20px;
+}
+  
+.page-nav__link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.4em;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    transition: 0.5s background;
+  
+  
+    &:hover {
+      color: $colorDeco;
+    }
+  
+}
+  
+.fas.fa-angle-right {
+    color: $colorDeco;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: none;
+}
+  
+.page-nav__item.active {
+    border-left: 8px solid $colorDeco;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .fas.fa-angle-right {
+      display: block;
+    }
+}

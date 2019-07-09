@@ -1,0 +1,49 @@
+.call-action {
+  background: $colorNav;
+  color: $colorBackground;
+  font-family: $fontPrimary;
+  font-size: $fontSize;
+
+  .container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .call-action__left-block {
+    flex: 1;
+    padding: 30px 100px 30px 0;
+  }
+
+  .call-action__right-block--btn {
+    padding: 15px;
+    width: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .call-action {
+    padding: 0 40px;
+
+    .call-action__right-block--btn {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 624px) {
+  .call-action {
+    padding: 20px;
+
+    .call-action__left-block {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .container {
+      flex-direction: column;
+    }
+  }
+}
