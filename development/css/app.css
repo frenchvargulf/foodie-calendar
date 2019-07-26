@@ -413,7 +413,7 @@ i {
 /* Main desktop */
 /* -------------------------------------- */
 .main-desktop {
-  min-height: 83.5vh;
+  min-height: 85.5vh;
   height: 100%;
   width: 100%;
   background: url("../../development/images/background.png");
